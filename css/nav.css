@@ -1,0 +1,102 @@
+body{
+    padding:0;
+    margin:0;
+    font-family: Century Gothic;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+}
+
+label.logo{
+    float: left;
+    line-height: 80px;
+    padding: 0 100px;
+    color: white;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+nav{
+    background: #5434af;
+    height: 80px;
+    width: 100%;
+}
+
+nav ul{/*Levar o menu para o lado direito*/
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li{/*Deixar os li em linha*/
+    display: inline-block;
+    line-height: 50px;
+    margin: 0 5px;
+}
+
+nav ul li a{ /**/
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+a.active, a:hover{
+    background: #1d075f;
+    transition: .5s;
+}
+
+.checkbtn{/*Formatação do menu*/
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    color: white;
+    margin: 0 15px;
+    display: none;
+}
+
+#check{/*Formatar o identificador do checkbox*/
+    display: none;
+}
+
+@media (max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 858px){/*Resolução para smartFone*/
+    .checkbtn{
+        display: block;/*Aparecer o menu na resolução 858*/
+    }
+    ul{/*Formatar o menu responsivo*/
+        position: fixed;/*Fixar sobre o conteúdo */
+        width: 100%;
+        height: 100vh;/* Vai cobrir toda a tela (VH)*/
+        background-color: #cebeff;
+        top: 80px; /*Vai parecer abaixo  do navBar*/
+        left: -108%;/*Vai esconder o menu do lado esquerdo*/
+        text-align: center;
+        transition: all .5s; /*Todos os elementos*/
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0px;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: black;
+    }
+    a:active, a:hover{
+        color: white;
+    }
+    #check:checked ~ ul{/*Interação ao menu*/
+        left: 0; /*Ao clicar o menu aparece com esse valor*/
+    }
+}
